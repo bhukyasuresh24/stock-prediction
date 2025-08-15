@@ -50,12 +50,10 @@ A real-time stock and index prediction system using *Python, Machine Learning, a
 
 ---
 ## How to Run
-1. Install dependencies:
 
-```bash
-pip install -r requirements.txt
-
-2. To Run Live:
+1. To Run Live:
 
 ```bash
 python -m src.predict --symbol ^NSEI --live
+
+---
