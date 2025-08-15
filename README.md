@@ -42,6 +42,16 @@ A real-time stock and index prediction system using **Python, Machine Learning, 
    - Returns the predicted next price in real-time.
 
 ---
+## Folder Structure
+- `data/raw/` → raw CSV files (historical data)
+- `data/processed/` → cleaned & feature-engineered data
+- `notebooks/` → Jupyter notebooks for EDA and modeling
+- `src/` → Python scripts (data loading, feature engineering, models, strategy, backtesting)
+- `models/` → saved ML/DL models
+- `results/` → charts, performance reports
+
+
+---
 
 ## **How to Run**
 
@@ -57,17 +67,6 @@ cd stock-prediction
 3. To Run Live:
    ```bash
    python -m src.predict --symbol ^NSEI --live
-
-
-
----
-## Folder Structure
-- `data/raw/` → raw CSV files (historical data)
-- `data/processed/` → cleaned & feature-engineered data
-- `notebooks/` → Jupyter notebooks for EDA and modeling
-- `src/` → Python scripts (data loading, feature engineering, models, strategy, backtesting)
-- `models/` → saved ML/DL models
-- `results/` → charts, performance reports
 
 
 ---
