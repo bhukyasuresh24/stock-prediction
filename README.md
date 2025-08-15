@@ -15,4 +15,5 @@ This project predicts the NIFTY 50 index price and builds trading strategies bas
    ```bash
    pip install -r requirements.txt
 2. To Run Live:
-     python -m src.predict --symbol ^NSEI --live
+   ```bash
+   python -m src.predict --symbol ^NSEI --live
