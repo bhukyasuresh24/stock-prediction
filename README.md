@@ -47,3 +47,8 @@ This is a **full Python-based project** ready for real-time predictions, analysi
 ```bash
 git clone https://github.com/bhukyasuresh24/stock-prediction.git
 cd stock-prediction
+---
+## Install dependencies:
+
+pip install -r requirements.txt
+---
