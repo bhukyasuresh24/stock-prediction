@@ -49,6 +49,38 @@ A real-time stock and index prediction system using *Python, Machine Learning, a
 
 
 ---
+
+# 1️⃣ Clone the repository
+git clone https://github.com/bhukyasuresh24/stock-prediction.git
+cd stock-prediction
+
+# 2️⃣ Create a virtual environment (optional but recommended)
+python -m venv venv
+
+# 3️⃣ Activate the virtual environment
+# Windows
+venv\Scripts\activate
+# Linux/macOS
+source venv/bin/activate
+
+# 4️⃣ Install required Python packages
+pip install -r requirements.txt
+
+# 5️⃣ Run live stock/index prediction
+# Replace ^NSEI with any symbol you want to predict
+python src/predict.py --symbol ^NSEI --live
+
+# 6️⃣ Generate historical performance report
+python src/performance_report.py --symbol ^NSEI
+
+# 7️⃣ (Optional) Open the plot
+# The performance_report.py script automatically shows a Matplotlib plot of actual vs predicted prices
+
+# 8️⃣ Deactivate virtual environment after use
+deactivate
+
+
+---
 ## How to Run
 
 1. To Run Live:
