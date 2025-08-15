@@ -53,12 +53,20 @@ A real-time stock and index prediction system using **Python, Machine Learning, 
 
 ---
 
-## **How to Run**
+## How to Run
 
 ```bash
 git clone https://github.com/bhukyasuresh24/stock-prediction.git
 cd stock-prediction
 
+2. Install dependencies:
 
+```bash
+pip install -r requirements.txt
+
+3. To Run Live:
+
+```bash
+python -m src.predict --symbol ^NSEI --live
 
 
