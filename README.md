@@ -55,5 +55,3 @@ A real-time stock and index prediction system using *Python, Machine Learning, a
 
 ```bash
 python -m src.predict --symbol ^NSEI --live
-
----
