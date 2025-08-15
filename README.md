@@ -62,11 +62,14 @@ git clone https://github.com/bhukyasuresh24/stock-prediction.git
 cd stock-prediction
 
 2. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
+
+```bash
+pip install -r requirements.txt
+
 3. To Run Live:
-   ```bash
-   python -m src.predict --symbol ^NSEI --live
+
+```bash
+python -m src.predict --symbol ^NSEI --live
 
 
 ---
