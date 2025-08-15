@@ -50,6 +50,7 @@ A real-time stock and index prediction system using **Python, Machine Learning, 
 ```bash
 git clone https://github.com/bhukyasuresh24/stock-prediction.git
 cd stock-prediction
+
 2. Install dependencies:
    ```bash
    pip install -r requirements.txt
@@ -58,6 +59,8 @@ cd stock-prediction
    python -m src.predict --symbol ^NSEI --live
 
 
+
+---
 ## Folder Structure
 - `data/raw/` → raw CSV files (historical data)
 - `data/processed/` → cleaned & feature-engineered data
@@ -65,3 +68,6 @@ cd stock-prediction
 - `src/` → Python scripts (data loading, feature engineering, models, strategy, backtesting)
 - `models/` → saved ML/DL models
 - `results/` → charts, performance reports
+
+
+---
