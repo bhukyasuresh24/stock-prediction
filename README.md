@@ -1,89 +1,118 @@
-# FinSight: AI-Powered Real-Time Stock & Index Prediction & Strategy
+# 🚀 Stock Market Prediction & Performance Analysis
 
-A real-time stock and index prediction system using *Python, Machine Learning, and live market data*. This project predicts the next price of Nifty50 (or any stock/index) based on historical data and technical indicators.
-
----
-
-## *Features*
-
-- ✅ Predicts next-day stock/index price using a trained ML model.
-- ✅ Real-time live prediction using Yahoo Finance data.
-- ✅ Computes technical indicators such as:
-  - SMA (Simple Moving Average) 20, 50, 200
-  - RSI (Relative Strength Index)
-  - MACD (Moving Average Convergence Divergence)
-- ✅ Clean, modular Python code ready for integration with a frontend.
-- ✅ Easy to extend to other stocks or indices.
+![Python](https://img.shields.io/badge/python-3.10-blue?logo=python&logoColor=white)
+![License](https://img.shields.io/badge/license-MIT-green)
+![Status](https://img.shields.io/badge/status-Active-brightgreen)
 
 ---
 
-## *How It Works*
-
-1. *Data Collection:*
-   - Historical stock/index data is fetched from *Yahoo Finance*.
-   - Includes Open, High, Low, Close, Volume, Adj Close.
-
-2. *Feature Engineering:*
-   - Technical indicators are calculated from historical data:
-     - *SMA20, SMA50, SMA200:* Smooth price trends.
-     - *RSI:* Indicates overbought/oversold conditions.
-     - *MACD & Signal Line:* Helps capture trend reversals.
-   - Data is cleaned and converted to numeric format to ensure proper ML input.
-
-3. *Model:*
-   - A machine learning model (e.g., Random Forest or XGBoost) is trained on historical features.
-   - The model learns the relationship between technical indicators and the next price.
-
-4. *Prediction:*
-   - The *latest row* of processed data is fed into the model.
-   - Returns the predicted next price in real-time.
-
----
-## Folder Structure
-- data/raw/ → raw CSV files (historical data)
-- data/processed/ → cleaned & feature-engineered data
-- notebooks/ → Jupyter notebooks for EDA and modeling
-- src/ → Python scripts (data loading, feature engineering, models, strategy, backtesting)
-- models/ → saved ML/DL models
-- results/ → charts, performance reports
-
+## Table of Contents
+1. [Project Overview](#project-overview)
+2. [Background](#background)
+3. [Data Collection](#data-collection)
+4. [Preprocessing](#preprocessing)
+5. [Model Development](#model-development)
+6. [Model Training & Evaluation](#model-training--evaluation)
+7. [How It Works](#how-it-works)
+8. [Programming Language & Libraries](#programming-language--libraries)
+9. [Challenges](#challenges)
+10. [Future Work](#future-work)
+11. [Usage](#usage)
+12. [Results & Visualizations](#results--visualizations)
 
 ---
 
-# 1️⃣ Clone the repository
+## Project Overview
+**Objective:**  
+The primary goal of this project is to predict future stock and index prices using machine learning models, generate live predictions, and evaluate performance using historical data. It is designed for traders, analysts, and data enthusiasts to gain actionable insights from financial data.
+
+---
+
+## Background
+Stock market prediction is complex due to high volatility and non-linear patterns. Traditional statistical models often fail to capture these dynamics. This project leverages **machine learning** to forecast stock/index prices, providing a robust workflow from data collection to prediction and performance evaluation.
+
+---
+
+## Data Collection
+- Source: **Yahoo Finance** via `yfinance`.
+- Supports both historical and live stock/index data.
+- Allows fetching daily OHLCV (Open, High, Low, Close, Volume) data.
+
+---
+
+## Preprocessing
+- Converts all relevant columns to numeric format.
+- Drops rows with missing `Close` values.
+- Creates **technical indicators**:
+  - **SMA20, SMA50, SMA200** – Simple Moving Averages
+  - **RSI** – Relative Strength Index
+  - **MACD & Signal Line** – Moving Average Convergence Divergence
+- Ensures data is ready for model input.
+
+---
+
+## Model Development
+- **Machine Learning Model:** Trained on historical price data and technical indicators to predict next-day prices.
+- **Performance Report:** Compares predictions with actual historical prices.
+- Designed to be extensible for **LSTM, GRU, CNN**, or ensemble models in the future.
+
+---
+
+## Model Training & Evaluation
+- Performance evaluated using **Root Mean Square Error (RMSE)**.
+- Fine-tuning of hyperparameters for better prediction accuracy.
+- Generates visual plots of **predicted vs. actual values**.
+- Supports both **historical backtesting** and **live prediction**.
+
+---
+
+## How It Works
+1. **Live Prediction**  
+   Fetches latest data from Yahoo Finance and predicts the next value using the trained model.
+
+2. **Historical Performance Analysis**  
+   Downloads historical data, generates features, runs the trained model, and outputs:
+   - Predicted vs. actual prices
+   - RMSE and other metrics
+   - Visualization of prediction accuracy
+
+3. **Visualization**  
+   Generates plots to visualize trends and assess prediction performance.  
+   _Placeholder for plot images:_
+
+   ![Predicted vs Actual Prices](./assets/plot_placeholder.png)
+
+---
+
+## Programming Language & Libraries
+- **Language:** Python  
+- **Libraries:**  
+  - `yfinance` – For stock data collection  
+  - `pandas` & `numpy` – Data processing  
+  - `scikit-learn` – Model building and evaluation  
+  - `matplotlib` – Visualization  
+  - `joblib` – Model serialization
+
+---
+
+## Challenges
+- Handling **missing or inconsistent stock data**.
+- Ensuring **feature engineering** works for both live and historical datasets.
+- Avoiding **overfitting** in ML models.
+
+---
+
+## Future Work
+- Integrate **deep learning models**: LSTM, GRU, CNN.
+- Implement **multivariate time series forecasting**.
+- Deploy a **web-based dashboard** for live monitoring.
+- Combine multiple models for **ensemble forecasting**.
+
+---
+
+## Usage
+
+### Clone the repository
+```bash
 git clone https://github.com/bhukyasuresh24/stock-prediction.git
 cd stock-prediction
-
-# 2️⃣ Create a virtual environment (optional but recommended)
-python -m venv venv
-
-# 3️⃣ Activate the virtual environment
-# Windows
-venv\Scripts\activate
-# Linux/macOS
-source venv/bin/activate
-
-# 4️⃣ Install required Python packages
-pip install -r requirements.txt
-
-# 5️⃣ Run live stock/index prediction
-# Replace ^NSEI with any symbol you want to predict
-python src/predict.py --symbol ^NSEI --live
-
-# 6️⃣ Generate historical performance report
-python src/performance_report.py --symbol ^NSEI
-
-# 7️⃣ (Optional) Open the plot
-# The performance_report.py script automatically shows a Matplotlib plot of actual vs predicted prices
-
-# 8️⃣ Deactivate virtual environment after use
-deactivate
-
-
----
-## How to Run
-
-1. To Run Live:
-
-```bash
-python -m src.predict --symbol ^NSEI --live
