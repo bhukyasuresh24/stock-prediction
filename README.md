@@ -1,54 +1,61 @@
-# Stock Prediction & Performance Analysis
+# FinSight: AI-Powered Real-Time Stock & Index Prediction & Strategy
 
-![Stock Prediction](https://img.shields.io/badge/Status-Completed-green)
-
-## 📌 Project Overview
-This project predicts stock/index prices using historical market data and machine learning models. It downloads live and historical stock data, processes features like moving averages, RSI, and MACD, and predicts the next value using a pre-trained model. It also generates performance reports comparing actual vs predicted prices.
-
-This is a **full Python-based project** ready for real-time predictions, analysis, and performance reporting. It’s suitable for showcasing on your resume for campus interviews at top institutes like **IIT Indore**.
+A real-time stock and index prediction system using *Python, Machine Learning, and live market data*. This project predicts the next price of Nifty50 (or any stock/index) based on historical data and technical indicators.
 
 ---
 
-## 💡 Features
-- Download **historical and live stock/index data** using Yahoo Finance API.
-- Compute technical indicators:
-  - SMA20, SMA50, SMA200 (Simple Moving Averages)
+## *Features*
+
+- ✅ Predicts next-day stock/index price using a trained ML model.
+- ✅ Real-time live prediction using Yahoo Finance data.
+- ✅ Computes technical indicators such as:
+  - SMA (Simple Moving Average) 20, 50, 200
   - RSI (Relative Strength Index)
-  - MACD & Signal Line
-- Predict **next-day stock price** using a trained ML model.
-- Generate **performance report** with metrics:
-  - MAE (Mean Absolute Error)
-  - RMSE (Root Mean Squared Error)
-  - MAPE (Mean Absolute Percentage Error)
-- Visualize actual vs predicted prices with **Matplotlib charts**.
-- Safe handling of single-row and live data to prevent errors.
+  - MACD (Moving Average Convergence Divergence)
+- ✅ Clean, modular Python code ready for integration with a frontend.
+- ✅ Easy to extend to other stocks or indices.
 
 ---
 
-## ⚡ How It Works
-1. **Data Download**: Uses `yfinance` to download stock data.
-2. **Feature Engineering**:
-   - Computes technical indicators to form ML features.
-   - Handles missing data and ensures numeric columns are safe.
-3. **Model Prediction**:
-   - Loads a pre-trained ML model (`nifty50_model.pkl`).
-   - Uses last available row for live prediction or full historical data for performance analysis.
-4. **Performance Report**:
-   - Compares predicted vs actual prices.
-   - Calculates metrics (MAE, RMSE, MAPE).
-   - Generates plots for visualization.
+## *How It Works*
+
+1. *Data Collection:*
+   - Historical stock/index data is fetched from *Yahoo Finance*.
+   - Includes Open, High, Low, Close, Volume, Adj Close.
+
+2. *Feature Engineering:*
+   - Technical indicators are calculated from historical data:
+     - *SMA20, SMA50, SMA200:* Smooth price trends.
+     - *RSI:* Indicates overbought/oversold conditions.
+     - *MACD & Signal Line:* Helps capture trend reversals.
+   - Data is cleaned and converted to numeric format to ensure proper ML input.
+
+3. *Model:*
+   - A machine learning model (e.g., Random Forest or XGBoost) is trained on historical features.
+   - The model learns the relationship between technical indicators and the next price.
+
+4. *Prediction:*
+   - The *latest row* of processed data is fed into the model.
+   - Returns the predicted next price in real-time.
 
 ---
+## Folder Structure
+- data/raw/ → raw CSV files (historical data)
+- data/processed/ → cleaned & feature-engineered data
+- notebooks/ → Jupyter notebooks for EDA and modeling
+- src/ → Python scripts (data loading, feature engineering, models, strategy, backtesting)
+- models/ → saved ML/DL models
+- results/ → charts, performance reports
 
-## 🛠️ Setup & Installation
 
-1. Clone the repository:
+---
+## How to Run
+1. Install dependencies:
 
 ```bash
-git clone https://github.com/bhukyasuresh24/stock-prediction.git
-cd stock-prediction
----
-## Install dependencies:
-
 pip install -r requirements.txt
----
+
+2. To Run Live:
+
+```bash
+python -m src.predict --symbol ^NSEI --live
