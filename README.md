@@ -55,6 +55,8 @@ A real-time stock and index prediction system using **Python, Machine Learning, 
 
 ## How to Run
 
+1lksmfs
+
 ```bash
 git clone https://github.com/bhukyasuresh24/stock-prediction.git
 cd stock-prediction
